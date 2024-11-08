@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login Page</h2>
+        Login: <input type="text" id="loginId" placeholder="Login ID" required>
+        <br><br>
+        Password: <input type="password" id="password" placeholder="Password" required>
+        <div><br><br>
+            <button class="submit" onclick="submitForm()">Submit</button>
+            <button class="reset" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const loginId = document.getElementById('loginId').value;
+            const password = document.getElementById('password').value;
+
+            // Simple authentication check
+            if (loginId === 'user' && password === 'password') {
+                alert('Login successful!');
+                window.location.href = 'converter.html'; // Redirect to another page
+            } else {
+                alert('Invalid Login ID or Password');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('loginId').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
